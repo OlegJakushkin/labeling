@@ -1,0 +1,7 @@
+{% extends 'base.html' %}
+{% block body %}
+<center>
+<h1> {{role}}: Недостаточно прав</h1>
+<h1><p><a href="{{url_for('label_studio.welcome_page')}}">ОК</a></p></h1>
+</center>
+{% endblock %}
