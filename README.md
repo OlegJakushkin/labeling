@@ -9,5 +9,5 @@ Labeling Service
 Установка
 ---------
 
-<pip install label-studio
-pip install flask-login>
+      pip install label-studio
+      pip install flask-login
