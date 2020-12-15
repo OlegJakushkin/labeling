@@ -1,0 +1,128 @@
+html, body {
+font-family: "Arial Narow";
+margin: 0;
+padding: 0;
+height: 100%;
+width: 100%;
+}
+
+a {
+color: #0059b2;
+text-decoration: none;
+font-size: 20px;
+}
+a:hover {
+color: #CC0000;
+text-decoration: underline;
+}
+
+.clear {clear: both;}
+
+ul.mainmenu {
+list-style: none;
+background: #ffffff;
+height: 50px;
+margin: 0;
+padding: 0;
+color: #555555;
+/* font-size: 20px; */
+overflow: hidden;
+box-shadow: 0 5px 5px -5px #555555;
+display: flex; 
+justify-content: space-between;
+}
+ul.mainmenu li {
+float: left;
+margin-top: 16px;
+margin-left: 100px;
+margin-right: 100px;
+}
+ul.mainmenu li.last {float: right;}
+
+ul.mainmenu li a {
+text-decoration:none; /*Убираем стандартное подчёркивание ссылки если оно ещё не убрано*/
+display: inline-block; /*делаем чтобы наша ссылка из строчного элемента превратилась в строчно-блочный 
+line-height: 1; /*Задаём высоту строки (можно в пикселях)*/
+color:#474747;/*Задаём цвет ссылки*/
+}
+ul.mainmenu li a:after {
+    display: block; /*превращаем его в блочный элемент*/
+    content: ""; /*контента в данном блоке не будет поэтому в кавычках ничего не ставим*/
+    height: 3px; /*задаём высоту линии*/
+    width: 0%; /*задаём начальную ширину элемента (линии)*/
+    background-color: #448acf; /*цвет фона элемента*/
+    transition: width 0.2s ease-in-out; /*данное свойство отвечает за плавное изменение ширины. Здесь можно задать время анимации в секундах (в данном случае задано 0.4 секунды)*/
+    }
+ul.mainmenu li a:hover:after,
+ul.mainmenu li a:focus:after {
+    width: 100%;
+    }
+ul.mainmenu li a:hover{
+    color:#225384;
+    } 
+
+div.content {
+text-align: center;
+margin: 10px;
+}
+
+.form-contact label {
+display: inline-block;
+min-width: 80px;
+}
+.form-contact p {font-size: 18px; margin: 10px 0 10px 0;}
+/* .form-contact input[type=submit], textarea {
+font-size: 16px;
+} */
+.form-contact input[type=text]{
+    height: 50px;
+    font-size: 26px;
+    border-radius: 10px;
+}
+
+.form-contact input[type=password]{
+    height: 50px;
+    font-size: 26px;
+    border-radius: 10px;
+}
+
+.form-contact input[type=submit]{
+    height: 50px;
+    width: 150px;
+    font-size: 20px;
+    border-radius: 10px;
+}
+
+.flash {padding: 10px;}
+.flash.success {
+border: 1px solid #21DB56;
+background: #AEFFC5;
+}
+.flash.error {
+border: 1px solid #FF4343;
+background: #FF9C9C;
+}
+
+.profile-load {
+margin-top: 10px;
+overflow: hidden;
+max-width: 150px;
+}
+.profile-load input[type=submit], input[type=file] {
+width: 100%;
+font-size: 18px;
+}
+.profile-load p {
+padding: 0;
+margin: 5px 0 0 0;
+}
+
+.profile-panel {padding: 0 0 0 10px;}
+ul.profile-info {
+border: 2px solid #3b97cc;
+list-style: none;
+margin: 10px 0 0 0;
+padding: 0;
+color: #2c2c2c;
+}
+ul.profile-info li {margin: 10px; font-size: 26px;}

@@ -1,0 +1,31 @@
+{% extends '_base.html' %}
+
+{% block content %}
+{{ super() }}
+{% for cat, msg in get_flashed_messages(True) %}
+<div class="flash {{cat}}">{{msg}}</div>
+{% endfor %}
+<table align='center' border="0" class="profile-table">
+	<td valign="top" class="profile-panel">
+		<ul class="profile-info">
+        <li>Login: {{current_user.username()}}</li>
+        {% if current_user.can_import() %}
+        <li>Import: Allowed</li>
+        {% else %}
+        <li>Import: Forbidden</li>
+        {% endif %}
+        {% if current_user.can_export() %}
+        <li>Export: Allowed</li>
+        {% else %}
+        <li>Export: Forbidden</li>
+        {% endif %}
+        {% if current_user.can_label() %}
+        <li>Labeling: Allowed</li>
+        {% else %}
+        <li>Labeling: Forbidden</li>
+        {% endif %}
+        </ul>
+        <p><a href="{{url_for('logout')}}">Выйти из профиля</a>
+	</td></tr>
+</table>
+{% endblock %}
