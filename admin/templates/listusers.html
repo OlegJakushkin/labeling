@@ -1,0 +1,28 @@
+{% extends 'base_admin.html' %}
+
+{% block content %}
+{{ super() }}
+<h1>{{title}}</h1>
+<ul class="list-posts">
+{% for p in list %}
+<li>
+<p class="title">{{p.login}}</p>
+{% if p.import %}
+<p class="positive">can import</p>
+{% else %}
+<p class="negative">can't import</p>
+{% endif %}
+{% if p.export %}
+<p class="positive">can export</p>
+{% else %}
+<p class="negative">can't export</p>
+{% endif %}
+{% if p.labeling %}
+<p class="positive">can label</p>
+{% else %}
+<p class="negative">can't label</p>
+{% endif %}
+{% endfor %}
+</li>
+</ul>
+{% endblock %}
